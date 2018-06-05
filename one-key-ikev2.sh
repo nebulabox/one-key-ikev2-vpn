@@ -1,20 +1,18 @@
-#! /bin/bash
+#!/usr/bin/env bash
+#set -x
+#set -e
+
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 #===============================================================================================
 #   System Required:  CentOS6.x/7 (32bit/64bit) or Ubuntu
 #   Description:  Install IKEV2 VPN for CentOS and Ubuntu
-#   Author: quericy
-#   Intro:  https://quericy.me/blog/699
 #===============================================================================================
 
 clear
 VER=1.2.0
 echo "#############################################################"
 echo "# Install IKEV2 VPN for CentOS6.x/7 (32bit/64bit) or Ubuntu or Debian7/8.*"
-echo "# Intro: https://quericy.me/blog/699"
-echo "#"
-echo "# Author:quericy"
 echo "#"
 echo "# Version:$VER"
 echo "#############################################################"
@@ -212,7 +210,7 @@ function pre_install(){
 
 # Download strongswan
 function download_files(){
-    strongswan_version='strongswan-5.5.1'
+    strongswan_version='strongswan-5.6.3'
     strongswan_file="$strongswan_version.tar.gz"
     if [ -f $strongswan_file ];then
         echo -e "$strongswan_file [$(__green "found")]"
